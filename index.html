@@ -37,13 +37,15 @@ main,.footer{position:relative;z-index:1}
 .hero:before,.hero:after{content:"";position:absolute;width:min(32vw,280px);height:5px;background:var(--red);top:0}
 .hero:before{left:0}
 .hero:after{right:0}
-.hero-shell{width:min(850px,100%);padding:clamp(46px,8vw,90px) 24px;border-block:1px solid var(--line)}
+.hero-shell{position:relative;z-index:1;width:min(850px,100%);padding:clamp(46px,8vw,90px) 24px;border-block:1px solid var(--line)}
 .hero-kicker{font:600 .7rem/1.4 var(--sans);letter-spacing:.3em;text-transform:uppercase;color:var(--red)}
 .hero-names{font:400 clamp(5rem,14vw,10rem)/.72 var(--script);color:var(--red);margin:46px 0 38px}
 .hero-names span{display:block;font:500 .34em/1.2 var(--serif);color:var(--ink);margin:.28em 0}
 .hero-date{font-size:clamp(1.4rem,4vw,2rem);letter-spacing:.12em;text-transform:uppercase}
 .hero-place{font-size:clamp(1.5rem,4vw,2.3rem);margin-top:16px}
 .hero-time{font:600 .72rem/1.5 var(--sans);letter-spacing:.18em;text-transform:uppercase;color:#5d4542;margin-top:10px}
+.hero-photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.14;filter:saturate(1.06) blur(1px);-webkit-mask-image:linear-gradient(180deg,transparent,#000 26%,#000 74%,transparent);mask-image:linear-gradient(180deg,transparent,#000 26%,#000 74%,transparent);animation:heroGlow 26s ease-in-out infinite alternate;pointer-events:none}
+@keyframes heroGlow{from{transform:scale(1.02)}to{transform:scale(1.09)}}
 .scroll{display:inline-flex;flex-direction:column;align-items:center;gap:9px;margin-top:48px;text-decoration:none;font:600 .62rem/1 var(--sans);letter-spacing:.22em;text-transform:uppercase;color:var(--red)}
 .scroll span{width:1px;height:38px;background:linear-gradient(var(--red),transparent)}
 section{padding:100px 22px}
@@ -115,7 +117,7 @@ section{padding:100px 22px}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}
 .intro,.reveal,.open-btn,.map-btn{transition:none}
 .reveal{opacity:1;transform:none}
-.ambient-orb,.fly,.fly img{animation:none}
+.ambient-orb,.fly,.fly img,.hero-photo{animation:none}
 }
 
   </style>
@@ -126,7 +128,7 @@ section{padding:100px 22px}
   <button class="sound-btn" id="soundControl" type="button" aria-label="Pause wedding music" title="Wedding music"><span class="sound-icon" aria-hidden="true">♪</span></button>
   <div class="garden-layer" aria-hidden="true"><span class="ambient-orb a"></span><span class="ambient-orb b"></span><span class="ambient-orb c"></span><span class="fly one"><img src="red-butterfly.png" alt=""></span><span class="fly two"><img src="red-butterfly.png" alt=""></span><span class="fly three"><img src="red-butterfly.png" alt=""></span><span class="fly four"><img src="red-butterfly.png" alt=""></span></div>
   <div class="page"><div class="floral-watermarks" aria-hidden="true"><img class="sakura-mark one" src="sakura-watermark.png" alt=""><img class="sakura-mark two" src="sakura-watermark.png" alt=""><img class="sakura-mark three" src="sakura-watermark.png" alt=""><img class="sakura-mark four" src="sakura-watermark.png" alt=""><img class="sakura-mark five" src="sakura-watermark.png" alt=""><img class="branch-mark a" src="sakura-branch.png" alt=""><img class="branch-mark b" src="sakura-branch.png" alt=""><img class="branch-mark c" src="sakura-branch.png" alt=""><img class="branch-mark d" src="sakura-branch.png" alt=""><img class="branch-mark e" src="sakura-branch.png" alt=""><img class="branch-mark f" src="sakura-branch.png" alt=""><img class="branch-mark g" src="sakura-branch.png" alt=""><img class="branch-mark h" src="sakura-branch.png" alt=""></div><main>
-    <header class="hero" id="home"><div class="hero-shell"><div class="hero-kicker">Together with their families</div><h1 class="hero-names">Tharaka <span>&amp;</span> Nipuni</h1><div class="hero-date">14 November 2026</div><div class="hero-place">Tropical Life Resort &amp; Spa · Dambulla</div><div class="hero-time">10:30 AM to 3:30 PM</div><a class="scroll" href="#countdown">Celebrate with us<span></span></a></div></header>
+    <header class="hero" id="home"><img class="hero-photo" src="assets/photos/couple-hero-glow.jpg" alt="" aria-hidden="true"><div class="hero-shell"><div class="hero-kicker">Together with their families</div><h1 class="hero-names">Tharaka <span>&amp;</span> Nipuni</h1><div class="hero-date">14 November 2026</div><div class="hero-place">Tropical Life Resort &amp; Spa · Dambulla</div><div class="hero-time">10:30 AM to 3:30 PM</div><a class="scroll" href="#countdown">Celebrate with us<span></span></a></div></header>
     <section id="countdown"><div class="section-head reveal"><div class="tiny">Counting down to our day</div><h2>Until we say <em>welcome home</em></h2><p>We cannot wait to celebrate this joyful homecoming with the people we love.</p></div><div class="countdown reveal" aria-label="Countdown to the homecoming"><div class="time-box"><div><strong id="days">000</strong><span>Days</span></div></div><div class="time-box"><div><strong id="hours">00</strong><span>Hours</span></div></div><div class="time-box"><div><strong id="minutes">00</strong><span>Minutes</span></div></div><div class="time-box"><div><strong id="seconds">00</strong><span>Seconds</span></div></div></div><div class="countdown-message" id="countdownMessage" aria-live="polite"></div></section>
     <section aria-label="Homecoming details"><div class="details reveal"><article class="detail"><div class="tiny">The date</div><div class="number">14</div><h3>November 2026</h3></article><article class="detail"><div class="tiny">The time</div><div class="number">10:30</div><h3>AM to 3:30 PM</h3></article></div></section>
     <section><div class="family-invite reveal"><div class="tiny">Together with their families</div><div class="family-grid"><div class="family-side"><span>Loving son of</span><strong>Mr. &amp; Mrs. Senevirathna</strong></div><div class="family-join">Together with</div><div class="family-side"><span>Beloved daughter of</span><strong>Mr. &amp; Mrs. Wijesooriya</strong></div></div><p class="family-message">Warmly request the honour of your presence on the occasion of the homecoming of Tharaka and Nipuni.</p></div></section>
