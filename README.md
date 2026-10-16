@@ -6,9 +6,9 @@ Tharaka & Nipuni — 14 November 2026, Tropical Life Resort & Spa, Dambulla.
 ## Structure
 
 - `index.html` — the whole site (styles and scripts are inline)
-- `assets/photos/` — couple photographs: the "Captured moments" gallery,
-  plus `couple-hero-glow.jpg` used as the soft ambient backdrop in the hero
-  (shown at low opacity with a slow zoom)
+- `assets/photos/` — couple photographs: `couple-golden-field.jpg` (the featured
+  photo in the "Captured moments" gallery) and `couple-hero-glow.jpg` (the soft
+  ambient backdrop in the hero, shown at low opacity with a slow zoom)
 - Root media files (`*.png`, `*.jpg`, `*.jpeg`, `*.mp4`) — decorative artwork
   referenced by `index.html`
 
